@@ -1,17 +1,9 @@
-import { useState, useEffect } from 'react';
-
+import Useback from './hooks/use-back';
 import Card from './Card';
 
 const BackwardCounter = () => {
-  const [counter, setCounter] = useState(0);
+  const counter = <Useback />
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return <Card>{counter}</Card>;
 };
